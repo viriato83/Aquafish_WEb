@@ -6,7 +6,7 @@ import footerImg from "../components/img/imagens/banner_aquafish.png";
 import img1 from "../components/img/imagens/tilapia.jpg";
 import img2 from "../components/img/imagens/TilapiaV.png";
 import img3 from "../components/img/imagens/Garoupa2.png";
-import img4 from "../components/img/imagens/pedra.png";
+import img4 from "../components/img/imagens/Pedra.png";
 import img5 from "../components/img/imagens/serra.jpg";
 import img6 from "../components/img/imagens/corvina.JFIF";
 import img7 from "../components/img/imagens/vermelhao.png";
