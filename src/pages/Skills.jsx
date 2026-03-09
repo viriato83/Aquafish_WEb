@@ -8,7 +8,7 @@ import img2 from "../components/img/imagens/TilapiaV.png";
 import img3 from "../components/img/imagens/Garoupa2.png";
 import img4 from "../components/img/imagens/Pedra.png";
 import img5 from "../components/img/imagens/serra.jpg";
-import img6 from "../components/img/imagens/corvina.JFIF";
+import img6 from "../components/img/imagens/corvina.png";
 import img7 from "../components/img/imagens/vermelhao.png";
 import img8 from "../components/img/imagens/xereu.png";
 
