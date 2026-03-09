@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Bungee&family=Josefin+Sans:wght@100..700&family=Mozilla+Headline:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+@layer base {
+  h1 {
+    @apply font-bold text-2xl;
+    font-family: "Josefin Sans", sans-serif;
+  }
+
+  body {
+    @apply bg-blue-100;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+    font-family: "Josefin Sans", sans-serif;
+  }
+}
+@layer components{
+   .nome{
+    font-family: "Mozilla Headline", sans-serif;
+
+   }
+    .btn_sobre:hover
+   {
+    box-shadow: 2px 1px 20px #47a2c6;
+    
+   }
+   .gradiente{
+    box-shadow: 2px 1px 20px #47a2c6;
+   }
+   .sobra_azul{
+    box-shadow: 20px 10px 80px 80px #47a2c6;
+   }
+   .sobra_laranja{
+    box-shadow: 20px 10px 80px 80px #d4571882;
+   }
+   .hero_footer{
+      background: rgba(98, 58, 27, 0.171);
+      backdrop-filter: blur(8px);
+     
+   }
+   .skils:hover{
+    box-shadow: 2px 1px 10px rgba(255, 68, 0, 0.685);
+   }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  
+  animation: fadeIn 0.4s ease-out forwards;
+}
