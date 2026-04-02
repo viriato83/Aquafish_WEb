@@ -3,76 +3,84 @@ import img from "../components/img/imagens/sede.jpg"
 import { FaRegCircle } from 'react-icons/fa'
 import { LuCircleDashed } from 'react-icons/lu'
 import { motion } from "framer-motion";
+import bgImage from "../components/img/imagens/Hero_img.jpg";
+import { Link } from 'react-scroll';
 
 const Hero = () => {
   return (
-    
-    <div  id="home" className="max-sm:py-35 py-60 px-4 max-sm:w-full ">
-   
-      <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-      {/* Texto */}
-        <motion.section
-        initial={{opacity:0,x:-100}}
-        whileInView={{opacity:1,x:0,}}
-        transition={{duration:0.7}}
-        viewport={{ once: false, amount: 0.3 }}
+    <div
+      id="home"
+      className="relative min-h-screen flex items-center justify-center px-4 bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+      }}
+    >
+      {/* Overlay escuro */}
+      <div className="absolute inset-0 bg-black/70"></div>
+
+      {/* Conteúdo */}
+      <div className="relative z-10 max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
+        
+        {/* TEXTO */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-center md:text-left max-w-xl"
         >
+          <h2 className="text-cyan-400 uppercase tracking-widest text-sm md:text-base">
+            Aquacultura & Serviços
+          </h2>
 
-        <div className="text-center md:text-left max-w-xl max-sm:text-[15px]">
-          <h2 className="text-xl text-cyan-500 uppercase max-sm:text-[15px]">Aquacultura & Serviços</h2>
-          <h1 className="text-6xl font-bold text-gray-600 max-md:text-4xl max-sm:text-[25px]">
-            Aquafish Sociedade Unipessoal, Lda
+          <h1 className="text-white font-bold text-4xl md:text-6xl leading-tight mt-2">
+            Aquafish Lda
           </h1>
-          <p className="text-black mt-4">
-          Somos uma empresa moçambicana dedicada à produção de peixe de alta qualidade em cativeiro (piscicultura), à pesca no alto mar e à prestação de serviços especializados.
-        <br></br>
-      Atuamos com foco em qualidade, sustentabilidade e confiança, oferecendo também procurement, fornecimento de equipamentos e soluções para o setor da aquacultura e pesca.
+
+          <p className="text-gray-200 mt-4 text-sm md:text-lg">
+            Produzimos peixe de alta qualidade com foco em frescura, saúde e valor nutricional.
+            Atuamos também na pesca, procurement e fornecimento de soluções para o setor aquícola.
           </p>
-       
-        </div>
-        </motion.section>
 
-        {/* Foto com moldura gradiente */}
-      <motion.section
-       initial={{opacity:0,x:100}}
-       whileInView={{opacity:1,x:0,}}
-       transition={{duration:0.7}}
-       viewport={{ once: false, amount: 0.3 }}
-      
-      >
-        <div className="  gradiente rounded-full relative w-[400px] h-[400px]  flex items-center justify-center max-sm:w-[300px]  max-sm:h-[300px]  ">
-      
-          <LuCircleDashed
-              className="   absolute text-cyan-500 w-full h-full  animate-[spin_20s_linear_infinite]"
-          />
+          {/* BOTÕES */}
+          <div className="mt-6 flex flex-col sm:flex-row gap-4">
+           <Link to='contactos'>
+            <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-semibold transition">
+              Comprar Agora
+            </button></Link>
 
-          {/* Moldura com gradiente e imagem */}
-            <div className="bg-gradient-to-tr from-blue-500 to-cyan-900 h-[355px] w-[355px] rounded-full flex items-center justify-center z-1 max-ms:h-[180px] max-sm:w-[265px] max-sm:h-[265px]  ">
-                <img
-                src={img}
-                alt="Foto de Viriato"
-                className="w-90 h-67 sm:h-90 sm:w-400 rounded-full object-cover border-4 border-[#ffecdb55] "
-                />
-            </div>
+          <Link to='about'>
+            <button className="border border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition">
+              Saber Mais
+            </button></Link>
           </div>
+        </motion.div>
 
+        {/* CARD DE DESTAQUE */}
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white max-w-sm"
+        >
+          <h3 className="text-xl font-semibold mb-4 text-cyan-400">
+            Porquê escolher a Aquafish?
+          </h3>
 
-      </motion.section>
+          <ul className="space-y-2 text-sm">
+            <li>✔ 100% Saudável</li>
+            <li>✔ Sem Cheiro</li>
+            <li>✔ Rico em valor nutricional</li>
+            <li>✔ Produção sustentável</li>
+          </ul>
+        </motion.div>
       </div>
-       {/* Shadow BackGround */}
-       <div className=' sobra_azul bg-cyan-500 w-2 h-2 absolute -top-[10%] left-[70%] -z-10 animate-pulse' >
 
-        </div>
-       <div className=' sobra_laranja bg-orange-500 w-2 h-2 absolute top-[70%] -left-[1%] -z-10 animate-pulse' >
-
-        </div>
-        <footer className='hero_footer flex gap-15  justify-center text-2xl text-[#4382e2] mt-20 border-y border-blue-600/20 py-3 max-sm:mt-60 max-sm:text-[15px] max-sm:gap-6 max-sm:w-full  '>
-            <h2 >Piscicultura</h2>
-            <h2>Procurement</h2>
-            <h2>Pesca</h2>
-        </footer>
+      {/* FOOTER */}
+      <div className="absolute bottom-0 w-full text-center text-white border-t border-white/20 py-3 text-sm md:text-base">
+        Piscicultura • Procurement • Pesca
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

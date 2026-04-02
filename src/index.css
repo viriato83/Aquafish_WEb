@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-blue-100;
+    @apply bg-gradient-to-b from-cyan-900 to-gray-800;
     display: flex;
     /* justify-content: center; */
     align-items: center;

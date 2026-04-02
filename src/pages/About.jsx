@@ -1,97 +1,88 @@
 import React from 'react';
-import img from "../components/img/imagens/prod2.jpg"
+import img from "../components/img/imagens/prod2.jpg";
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 
 const About = () => {
+
   const paragraphVariant = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: (delay = 0) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, delay }
+      transition: { duration: 0.6, delay }
     })
   };
+
   return (
-    <div  id="about" className='flex justify-center items-center gap-6 max-md:flex-col'>
-      {/* texto */}
-      <motion.section
-       initial={{opacity:0,x:-100}}
-       whileInView={{opacity:1,x:0,}}
-       transition={{duration:0.7}}
-       viewport={{ once: false, amount: 0.3 }}
-      
-      >
-          <div className='flex items-start flex-col px-8 gap-5 text-white md:float-right'>
-            <h1 className="text-cyan-500  text-3xl md:text-6xl">Sobre Nós</h1>
-         
-        
-            <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
-      className="md:max-w-2xl text-justify text-black"
-    >
-      <motion.p
-        variants={paragraphVariant}
-        custom={0}
-      >
-       A Aquafish Sociedade Unipessoal, Lda é uma empresa moçambicana localizada em Quissico, Inhambane, especializada na produção e comercialização de peixe tilápia e pesca de peixe do mar. Nosso compromisso é oferecer produtos de alta qualidade, garantindo sustentabilidade e frescor.
-      </motion.p>
+    <section id="about" className="py-20 px-6 md:px-16 ">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
 
-      <motion.p
-        variants={paragraphVariant}
-        custom={0.3} // Delay de 0.3s
-        className="mt-4"
-      >
-       Produção de Tilápias
-Utilizamos incubadoras modernas para garantir a melhor qualidade na criação de tilápias. Além disso, produzimos alevinos saudáveis e resistentes, proporcionando um ciclo sustentável de produção para atender a demanda do mercado.
+        {/* TEXTO */}
+        <motion.div
+          className="flex-1 text-white"
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <h1 className="text-cyan-400 text-4xl md:text-6xl font-bold mb-6">
+            Sobre Nós
+          </h1>
 
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-4 text-gray-300 leading-relaxed"
+          >
+            <motion.p variants={paragraphVariant} custom={0}>
+              A Aquafish Sociedade Unipessoal, Lda é uma empresa moçambicana localizada em Quissico, Inhambane, especializada na produção e comercialização de tilápia e pesca marítima. Nosso compromisso é garantir produtos frescos, de alta qualidade e sustentáveis.
+            </motion.p>
 
-      </motion.p>
+            <motion.p variants={paragraphVariant} custom={0.3}>
+              Utilizamos incubadoras modernas para assegurar a melhor criação de tilápias, produzindo alevinos saudáveis e resistentes, garantindo um ciclo produtivo eficiente e sustentável.
+            </motion.p>
 
-      <motion.p
-        variants={paragraphVariant}
-        custom={0.6} // Delay de 0.6s
-        className="mt-4"
-      >
-       A Aquafish atua também na área de procurement e fornecimento de equipamentos, realizando a aquisição e fornecimento de insumos, materiais e equipamentos para aquacultura e pesca, facilitando o acesso a soluções técnicas adequadas às necessidades dos nossos clientes.
+            <motion.p variants={paragraphVariant} custom={0.6}>
+              Atuamos também no fornecimento de equipamentos e insumos para aquacultura e pesca, além de oferecer consultoria técnica especializada, apoiando desde o planeamento até a implementação de projetos.
+            </motion.p>
 
-Complementarmente, disponibilizamos consultoria e acompanhamento técnico, apoiando projetos aquícolas e pesqueiros, desde a fase de planeamento até a implementação e operação, com foco em eficiência, sustentabilidade e resultados económicos.
-      </motion.p>
+            <Link to="produtos" smooth={true} duration={500}>
+              <motion.button
+                variants={paragraphVariant}
+                custom={0.9}
+                className="mt-6 px-6 py-3 border border-cyan-400 rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300"
+              >
+                Nossos Produtos
+              </motion.button>
+            </Link>
+          </motion.div>
+        </motion.div>
 
-     <Link to='projectos'>
-     <motion.button
-        variants={paragraphVariant}
-        custom={0.9} // Delay de 0.9s
-        className="flex mb-[50px] border border-blue-500 py-2 mt-5 px-3 rounded-full hover:bg-cyan-500 transition-all duration-500"
-      >
-        Nossos Produtos
-      </motion.button>
-     </Link>
-    </motion.div>
-     
-     </div>
-      </motion.section>
-      <motion.section
-            initial={{opacity:0,x:100}}
-            whileInView={{opacity:1,x:0,}}
-            transition={{duration:0.7}}
-            viewport={{ once: false, amount: 0.3 }}>
-          <div className='flex'>
-          <img src={img} className='ml-8 flex rounded-4xl h-58  md:h-[300px] mb-10  md:mt-20'>
-            </img>
-            {/* <div className=' sobra_azul bg-cyan-500 w-2 h-2 absolute  left-[70%] -bottom-[40%] -z-10 animate-pulse' >
+        {/* IMAGEM */}
+        <motion.div
+          className="flex-1 relative"
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative group">
+            <img
+              src={img}
+              alt="Aquafish"
+              className="w-full h-[250px] md:h-[350px] object-cover rounded-3xl shadow-lg transform group-hover:scale-105 transition duration-500"
+            />
 
-              </div>
-              <div className=' sobra_laranja bg-orange-500 w-2 h-2 absolute left-[60%] -bottom-[55%] -z-10 animate-pulse' >
+            {/* overlay elegante */}
+            <div className="absolute inset-0 bg-cyan-500/10 rounded-3xl"></div>
+          </div>
+        </motion.div>
 
-          </div> */}
-          
-        </div>
-     </motion.section>
-    </div>
-  )
-}
+      </div>
+    </section>
+  );
+};
 
-export default About
+export default About;

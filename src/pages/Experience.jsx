@@ -1,173 +1,149 @@
 import React from "react";
 import { motion } from "framer-motion";
-import img from "../components/img/imagens/aquario.jpg";
-
-/* ================= SERVIÇOS AQUAFISH ================= */
+import img from "../components/img/IMG-P.jpg";
 
 const servicos = [
   {
-    nome: "Fornecimento  de Equipamentos",
+    nome: "Fornecimento de Equipamentos",
     descricao:
-      "A Aquafish fornece  a grosso equipamentos como máquinas semi-industriais, materiais de pesca, material agricola outros.",
+      "Distribuição a grosso de equipamentos semi-industriais, materiais de pesca e insumos agrícolas.",
+    icon: "⚙️",
   },
   {
-    nome: "Comercialização de Peixe Fresco",
+    nome: "Peixe Fresco",
     descricao:
-      "Venda de peixe fresco e selecionado (tilápia e peixe do mar) para mercados, restaurantes, instituições e clientes finais.",
+      "Comercialização de tilápia e peixe do mar, frescos, selecionados e de alta qualidade.",
+    icon: "🐟",
   },
   {
-    nome: "Fornecimento de Alevinos",
+    nome: "Alevinos",
     descricao:
-      "Disponibilização de alevinos de tilápia de qualidade para produtores locais e projetos de aquacultura.",
+      "Fornecimento de alevinos de tilápia certificados para produção eficiente.",
+    icon: "🌱",
   },
   {
-    nome: "Consultoria em Aquacultura",
+    nome: "Consultoria",
     descricao:
-      "Apoio técnico em montagem de viveiros, manejo alimentar, controlo de mortalidade e otimização da produção.",
+      "Assistência técnica completa em aquacultura: viveiros, alimentação e produção.",
+    icon: "📊",
   },
   {
-    nome: "Formação e Capacitação",
+    nome: "Formação",
     descricao:
-      "Treinamentos práticos e teóricos em piscicultura, voltados para produtores iniciantes e comunidades locais.",
+      "Capacitação prática e teórica para produtores e comunidades.",
+    icon: "🎓",
   },
   {
-    nome: "Pesca e Comercialização de Peixe do Mar",
+    nome: "Pesca Marítima",
     descricao:
-      "Atuação na pesca artesanal e comercialização de espécies marinhas, respeitando normas ambientais.",
+      "Pesca artesanal e comercial com responsabilidade ambiental.",
+    icon: "🚤",
   },
 ];
-
-/* ================= LINHA DO TEMPO AQUAFISH ================= */
 
 const timeline = [
   { ano: "2019", evento: "Início das atividades em aquacultura e pesca artesanal" },
-  { ano: "2020", evento: "Expansão da produção de tilápia e fornecimento local" },
-  { ano: "2021", evento: "Estruturação da Aquafish como empresa formal e sustentável" },
-];
-
-/* ================= INDICADORES ================= */
-
-const indicadores = [
-  { label: "Produção Aquícola", porcentagem: 60 },
-  { label: "Pesca do Mar", porcentagem: 25 },
-  { label: "Consultoria & Formação", porcentagem: 15 },
+  { ano: "2020", evento: "Expansão da produção e entrada no mercado local" },
+  { ano: "2021", evento: "Formalização da Aquafish e crescimento sustentável" },
 ];
 
 const Services = () => {
   return (
     <section
       id="servicos"
-      className="flex flex-col items-center justify-center mb-20 px-6 max-w-6xl mx-auto"
+      className="py-20 px-6  text-white"
     >
-      {/* TÍTULO */}
-      <h1 className="text-4xl md:text-6xl font-bold text-blue-500 py-6">
-        Serviços Aquafish
-      </h1>
+      {/* HEADER */}
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-6xl font-bold">
+          Nossos <span className="text-cyan-400">Serviços</span>
+        </h1>
+        <p className="text-gray-400 mt-4 max-w-xl mx-auto">
+          Soluções completas em aquacultura, pesca e fornecimento com foco em
+          qualidade, sustentabilidade e crescimento.
+        </p>
+      </div>
 
-      {/* LINHA DO TEMPO */}
-      <section className="w-full mb-14">
-        <h2 className="text-2xl text-blue-400 font-semibold mb-6 text-center">
+      {/* TIMELINE */}
+      <div className="max-w-3xl mx-auto mb-20">
+        <h2 className="text-2xl text-cyan-400 text-center mb-8">
           Nossa Trajetória
         </h2>
 
-        <ul className="border-l-4 border-blue-500 ml-4">
-          {timeline.map(({ ano, evento }, index) => (
-            <motion.li
-              key={index}
-              initial={{ opacity: 0, x: 80 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="mb-6 ml-6 relative"
-            >
-              <span className="absolute -left-8 top-0 bg-blue-500 rounded-full w-6 h-6"></span>
-              <time className="font-bold text-gray-600 text-xl">{ano}</time>
-              <p className="text-gray-700/80 mt-1 max-w-xl">{evento}</p>
-            </motion.li>
-          ))}
-        </ul>
-      </section>
-
-      {/* SERVIÇOS */}
-      <section className="w-full mb-16">
-        <h2 className="text-2xl text-blue-400 font-semibold mb-8 text-center">
-          O Que Fazemos
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {servicos.map(({ nome, descricao }, index) => (
+        <div className="relative border-l border-cyan-500/30 pl-6">
+          {timeline.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-blue-500/20 border-2 border-blue-500 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition"
+              className="mb-8"
             >
-              <h3 className="text-blue-700 text-xl font-bold mb-3">
-                {nome}
-              </h3>
-              <p className="text-gray-800/80 text-sm leading-relaxed">
-                {descricao}
-              </p>
+              <div className="absolute -left-3 w-6 h-6 bg-cyan-400 rounded-full"></div>
+              <h3 className="font-bold text-lg text-cyan-300">{item.ano}</h3>
+              <p className="text-gray-400">{item.evento}</p>
             </motion.div>
           ))}
         </div>
-      </section>
+      </div>
 
-      {/* INDICADORES
-      <section className="w-full mb-16">
-        <h2 className="text-2xl text-blue-400 font-semibold mb-6 text-center">
-          Áreas de Atuação
-        </h2>
+      {/* SERVIÇOS */}
+      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+        {servicos.map((servico, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-cyan-400 hover:shadow-cyan-500/20 shadow-lg transition-all"
+          >
+            <div className="text-4xl mb-4">{servico.icon}</div>
 
-        <div className="max-w-xl mx-auto space-y-6">
-          {indicadores.map(({ label, porcentagem }) => (
-            <div key={label}>
-              <div className="flex justify-between mb-1">
-                <span className="text-blue-100/80 font-semibold">{label}</span>
-                <span className="text-blue-100/80">{porcentagem}%</span>
-              </div>
-              <div className="w-full bg-blue-900 rounded-full h-4">
-                <div
-                  className="bg-blue-500 h-4 rounded-full transition-all"
-                  style={{ width: `${porcentagem}%` }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
+            <h3 className="text-xl font-semibold group-hover:text-cyan-400 transition">
+              {servico.nome}
+            </h3>
 
-      {/* IMAGEM + TEXTO */}
-      <section className="flex flex-col md:flex-row items-center gap-10">
+            <p className="text-gray-400 mt-2 text-sm">
+              {servico.descricao}
+            </p>
+
+            <div className="w-10 h-1 bg-cyan-400 mt-4 group-hover:w-20 transition-all"></div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* SOBRE */}
+      <div className="flex flex-col md:flex-row items-center gap-10 max-w-5xl mx-auto mb-20">
         <img
           src={img}
           alt="Aquafish"
-          className="rounded-2xl w-72 md:w-96 shadow-lg"
+          className="rounded-2xl w-80 shadow-lg"
         />
-        <p className="max-w-lg text-gray-700/70 text-justify">
-          A Aquafish é uma empresa moçambicana focada na produção sustentável,
-          fornecimento e comercialização de pescado. Trabalhamos com compromisso,
-          qualidade e respeito ao meio ambiente, contribuindo para a segurança
-          alimentar e o desenvolvimento local.
-        </p>
-      </section>
 
-      {/* CALL TO ACTION */}
-      <section className="mt-16 text-center">
-        <p className="text-blue-100/80 mb-4 text-lg">
-          Precisa de peixe fresco ou apoio técnico em aquacultura?
-        </p>
+        <div>
+          <h2 className="text-2xl text-cyan-400 mb-4">Sobre a Aquafish</h2>
+          <p className="text-gray-400 leading-relaxed">
+            A Aquafish é uma empresa moçambicana dedicada à produção e
+            comercialização de pescado com padrões elevados de qualidade.
+            Apostamos na sustentabilidade, inovação e impacto social,
+            contribuindo para o desenvolvimento económico local.
+          </p>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="text-center">
+        <h3 className="text-xl mb-4">
+          Precisa de peixe fresco ou soluções em aquacultura?
+        </h3>
+
         <a
-          href="mailto:contato@aquafish.co.mz"
-          className="inline-block bg-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 transition"
+          href="mailto:vmubai@aquafish.co.mz"
+          className="inline-block bg-cyan-500 hover:bg-cyan-600 px-8 py-3 rounded-full font-semibold transition"
         >
-          Fale Connosco
+          Solicitar Orçamento
         </a>
-      </section>
-
-      <div className="w-full border-b-4 border-blue-100/30 mt-12"></div>
+      </div>
     </section>
   );
 };
