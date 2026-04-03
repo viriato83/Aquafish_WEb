@@ -22,7 +22,7 @@ const NavBar = () => {
       <nav className="fixed top-4 flex items-center justify-between px-6 py-4 w-[90%] max-w-8xl rounded-full bg-black/40 backdrop-blur-md border border-blue-500 shadow-md">
         
         {/* Logo / Nome */}
-        <div className="nome text-white text-lg sm:text-2xl font-bold flex gap-5"><img src={img1} width="100px"></img>
+        <div className="nome text-white text-lg sm:text-2xl font-bold grid grid-cols-2 "><img src={img1} width="100px"></img>
         <Link 
               to="home"
               smooth={true}
@@ -31,9 +31,11 @@ const NavBar = () => {
               offset={-130}
               className="cursor-pointer hover:text-cyan-400 transition"
             >
-              Aquafish Lda
-            </Link></div>
-
+              Aquafish Lda 
+         
+            </Link>
+                    </div>
+ 
         {/* Links Desktop */}
         <ul className="hidden lg:flex items-center gap-6 text-white font-semibold">
           
@@ -61,7 +63,7 @@ const NavBar = () => {
         <div className="hidden lg:flex">
           <Link to='about'>
           <button className="btn_sobre flex items-center gap-2 px-4 py-2 text-white text-lg font-bold rounded-full border border-cyan-500 bg-gradient-to-r from-cyan-500 to-blue-400 hover:scale-105 hover:border-orange-400 transition">
-            Sobre Nos <FiArrowDownRight />
+            Sobre Nós <FiArrowDownRight />
           </button>
           </Link>
         </div>
@@ -94,8 +96,8 @@ const NavBar = () => {
           </ul>
           <div className="mt-6 flex justify-center">
             <Link to='about'>
-            <button onClick={() => setMenuOpen(false)} className="w-full max-w-md flex items-center justify-center gap-2 px-4 py-2 text-white text-lg font-bold rounded-full border border-cyan-500 bg-gradient-to-r from-cyan-500 to-orange-400 hover:scale-105 hover:border-orange-400 transition">
-              Sobre Mim 
+            <button onClick={() => setMenuOpen(false)} className="w-full max-w-md flex items-center justify-center gap-2 px-4 py-2 text-white text-lg font-bold rounded-full border border-cyan-500 bg-gradient-to-r from-cyan-500 to-gray-400 hover:scale-105 hover:border-orange-400 transition">
+              Sobre Nós 
             </button></Link>
           </div>
         </div>

@@ -10,9 +10,12 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-4 bg-cover bg-center"
+      className="relative min-h-screen flex items-center justify-center px-4 bg-cover bg-center w-full
+      max-sm:pt-20
+      "
       style={{
         backgroundImage: `url(${bgImage})`,
+      
       }}
     >
       {/* Overlay escuro */}
@@ -44,12 +47,12 @@ const Hero = () => {
           {/* BOTÕES */}
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
            <Link to='contactos'>
-            <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-semibold transition">
+            <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-semibold transition max-sm:mt-[-40px]">
               Comprar Agora
             </button></Link>
 
           <Link to='about'>
-            <button className="border border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition">
+            <button className="border border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition max-sm:mt-[-40px]">
               Saber Mais
             </button></Link>
           </div>
@@ -60,7 +63,9 @@ const Hero = () => {
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
-          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white max-w-sm"
+          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white
+       max-w-sm
+        max-sm:mt-[-25px]"
         >
           <h3 className="text-xl font-semibold mb-4 text-cyan-400">
             Porquê escolher a Aquafish?
