@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/70"></div>
 
       {/* Conteúdo */}
-      <div className="relative z-10 max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
+      <div className="relative  max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
         
         {/* TEXTO */}
         <motion.div
@@ -63,12 +63,12 @@ const Hero = () => {
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
-          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white
+          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white 
        max-w-sm
         max-sm:mt-[-25px]"
         >
           <h3 className="text-xl font-semibold mb-4 text-cyan-400">
-            Porquê escolher a Aquafish?
+            Porquê escolher a Tilápia da Aquafish?
           </h3>
 
           <ul className="space-y-2 text-sm">
